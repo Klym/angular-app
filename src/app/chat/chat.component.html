@@ -10,6 +10,13 @@
                     <div class="name">{{name}}</div>
                     <div class="description">{{description}}</div>
                 </div>
+                <div class="rating" *ngIf="!admin">
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star empty"></span>
+                </div>
             </div>
         </div>
         <div class="message-wrap">

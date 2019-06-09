@@ -6,14 +6,16 @@
 
 .chat {
     box-sizing: border-box;
-    padding-right: 24px;
+    padding-right: 16px;
     text-align: center;
-    width: 436px;
+    width: 100%;
+    box-shadow: 1px 0 0 0 #ebe9e4;
 }
 
 .chat.admin {
-    padding-left: 24px;
+    padding-left: 16px;
     padding-right: 0;
+    box-shadow: -1px 0 0 0 #ebe9e4;
 }
 
 .chat-box {
@@ -45,9 +47,12 @@
     flex-wrap: wrap;
 }
 
+.info {
+    margin-left: 14px;
+}
+
 .avatar {
     border-radius: 50%;
-    margin-right: 12px;
     height: 44px;
     width: 44px;
 }
@@ -61,6 +66,34 @@
     color: #ff4641;
     font: 13px/17px KievitPro-Regular;
     text-align: left;
+}
+
+.description::before {
+    background: url('../../assets/images/flag.png') top no-repeat;
+    content: "";
+    height: 10px;
+    display: inline-block;
+    margin-right: 3px;
+    vertical-align: middle;
+    width: 8px;
+}
+
+.rating {
+    position: relative;
+    left: 56px;
+    bottom: 3px;
+}
+
+.star {
+    background: url('../../assets/images/star.png') top no-repeat;
+    display: inline-block;
+    height: 12px;
+    vertical-align: middle;
+    width: 17px;
+}
+
+.star.empty {
+    background: url('../../assets/images/empty-star.png') top no-repeat
 }
 
 .message-wrap {
@@ -116,9 +149,9 @@
 
 .message {
     box-sizing: border-box;
-    padding: 0 14px;
+    padding: 0 19px;
     text-align: left;
-    width: 305px;
+    width: calc(100% - 44px);
 }
 
 .message .text {
