@@ -1,34 +1,54 @@
 .title {
     font: 29px/29px KievitPro-Bold;
+    margin-bottom: 30px;
+    text-align: left;
 }
 
 .chat {
-    display: block;
-    float: left;
-    position: relative;
-    width: 415px;
-    margin-bottom: 100px;
+    box-sizing: border-box;
+    padding-right: 24px;
+    text-align: center;
+    width: 436px;
 }
 
 .chat.admin {
-    border-left: 2px solid #EBE9E4;
-    margin-left:24px;
-    padding-left:24px;
+    padding-left: 24px;
+    padding-right: 0;
 }
 
 .chat-box {
-    background: white;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0;
+    position: relative;
 }
 
 .header {
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 1px 0 0 #ececec;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    left: 0;
+    top: 0;
     padding: 26px 15px 26px 26px;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+.user {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .avatar {
     border-radius: 50%;
-    float: left;
-    height: 44px;
     margin-right: 12px;
+    height: 44px;
     width: 44px;
 }
 
@@ -40,15 +60,25 @@
 .description {
     color: #ff4641;
     font: 13px/17px KievitPro-Regular;
+    text-align: left;
+}
+
+.message-wrap {
+    box-sizing: border-box;
+    min-height: 593px;
+    overflow: hidden;
+    padding-top: 96px;
+    position: relative;
 }
 
 .messages-list {
-    padding: 10px 10px 10px 13px;
+    box-sizing: border-box;
+    bottom: 0;
     max-height: 495px;
-    min-height: 495px;
-    border-top: 1px solid #ECECEC;
-    border-bottom: 1px solid #ECECEC;
-    overflow-x: hidden;
+    padding: 10px 10px 10px 13px;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
 }
 
 .messages-list::-webkit-scrollbar {
@@ -75,6 +105,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    box-sizing: border-box;
     position: relative;
     padding: 12px;
 }
@@ -84,8 +115,10 @@
 }
 
 .message {
-    display: block;
-    width: calc(100% - 56px);
+    box-sizing: border-box;
+    padding: 0 14px;
+    text-align: left;
+    width: 305px;
 }
 
 .message .text {
@@ -99,26 +132,40 @@
 }
 
 .form {
-    height: 50px;
+    align-items: center;
+    box-shadow: 0 -1px 0 0 #ececec;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 25px 15px 25px 25px;
+    text-align: left;
+    width: 100%;
+}
+
+.form-avatar {
+    border-radius: 50%;
+    height: 44px;
+    width: 44px;
 }
 
 .form input {
+    box-sizing: border-box;
+    outline: none;
     border: 1px solid #ececec;
     font: 15px/15px KievitPro-Regular;
     height: 50px;
     padding: 0 25px;
-    width: 218px;
+    width: 100%;
 }
-
 .form button {
     background: transparent;
-    border: none;
-    position: relative;
-    width: 35px;
-    top: -13px;
     cursor: pointer;
+    border: none;
+    height: 49px;
     outline: none;
+    position: relative;
+    width: 46px;
 }
 
 .form button::before {
@@ -126,8 +173,30 @@
     content: "";
     display: block;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 36%;
+    top: 30%;
     height: 22px;
     width: 22px;
+}
+
+.form > form {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 4px;
+}
+
+.input-box {
+    width: 270px;
+}
+
+.input {
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid #ececec;
+    font: 15px/15px KievitPro-Regular;
+    height: 50px;
+    padding: 0 25px;
+    width: 100%;
 }

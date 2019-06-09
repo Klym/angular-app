@@ -1,72 +1,38 @@
-<div class="chat">
-    <h1 class="title">Чат с пользователем</h1>
+<div class="chat" [class.admin]=admin>
+    <h1 class="title">{{title}}</h1>
     <div class="chat-box">
         <div class="header">
             <div class="user">
                 <span class="avatar">
-                    <img src="../../assets/images/user.png">
+                    <img src="{{avatar}}">
                 </span>
                 <div class="info">
-                    <div class="name">Наталья Полянская</div>
-                    <div class="description">Гид по Баварии, фотограф</div>
+                    <div class="name">{{name}}</div>
+                    <div class="description">{{description}}</div>
                 </div>
             </div>
         </div>
-        <div #scrollMe class="messages-list">
-            <div class="item" *ngFor="let message of messages" [class.my]="!message.isAdmin">
-                <div class="avatar">
-                    <img src="{{message.avatar}}" alt="" class="src">
-                </div>
-                <div class="message">
-                    <div class="text">{{message.text}}</div>
-                    <div class="time">{{message.time}}</div>
-                </div>
-            </div>
-        </div>
-        <div class="form">
-            <div class="avatar">
-                <img src="../../assets/images/user.png" alt="" class="src">
-            </div>
-            <form (submit)="send(false)">
-                <input name="user" type="text" [(ngModel)]="userMessage" placeholder="Напишите сообщение..." autocomplete="off">
-                <button type="submit"></button>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-<div class="chat admin">
-    <h1 class="title">Чат с администратором</h1>
-    <div class="chat-box">
-        <div class="header">
-            <div class="user">
-                <span class="avatar">
-                        <img src="../../assets/images/admin.png">
-                    </span>
-                    <div class="info">
-                        <div class="name">Администратор</div>
-                        <div class="description">TravelAsk</div>
-                </div>
-            </div>
-        </div>
-        <div #scrollMe2 class="messages-list">
-            <div class="item" *ngFor="let message of messages" [class.my]="message.isAdmin">
-                 <div class="avatar">
-                    <img src="{{message.avatar}}" alt="" class="src">
-                </div>
-                <div class="message">
-                    <div class="text">{{message.text}}</div>
-                    <div class="time">{{message.time}}</div>
+        <div class="message-wrap">
+            <div #scrollMe class="messages-list">
+                <div class="item" *ngFor="let message of staticMessages" [class.my]="admin == message.isAdmin">
+                    <div class="avatar">
+                        <img src="{{message.avatar}}" alt="" class="src">
+                    </div>
+                    <div class="message">
+                        <div class="text">{{message.text}}</div>
+                        <div class="time">{{message.time}}</div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="form">
-            <div class="avatar">
-                <img src="../../assets/images/admin.png" alt="" class="src">
+            <div class="form-avatar">
+                <img src="{{avatar}}" alt="" class="src">
             </div>
-            <form (submit)="send(true)">
-                <input name="admin" type="text" [(ngModel)]="adminMessage" placeholder="Напишите сообщение..." autocomplete="off">
+            <form (submit)="send()">
+                <div class="input-box">
+                    <input name="user" type="text" [(ngModel)]="message" placeholder="Напишите сообщение..." autocomplete="off">
+                </div>
                 <button type="submit"></button>
             </form>
         </div>

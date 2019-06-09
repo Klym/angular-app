@@ -10,8 +10,4 @@ export class Message {
         this.avatar = avatar;
         this.isAdmin = isAdmin;
     }
-
-    serialize() : object {
-        return {'text': this.text, 'time': this.time, 'avatar': this.avatar, 'isAdmin' : this.isAdmin};
-    }
 }

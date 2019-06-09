@@ -1,4 +1,4 @@
-import { Component, AfterViewChecked, ElementRef, ViewChild, OnInit } from "@angular/core";
+import { Component, AfterViewChecked, ElementRef, ViewChild, OnInit, Input } from "@angular/core";
 import { Message } from "./message"
 import * as moment from 'moment';
 
@@ -8,27 +8,44 @@ import * as moment from 'moment';
     styleUrls: ["chat.component.css"]
 })
 export class ChatComponent implements OnInit, AfterViewChecked {
+
+    @Input()
+    admin: boolean;
+    @Input()
+    title: string;
+    @Input()
+    avatar: string;
+    @Input()
+    name: string;
+    @Input()
+    description: string;
+
     @ViewChild('scrollMe', {static: false})
     private myScrollContainer: ElementRef;
-
-    @ViewChild('scrollMe2', {static: false})
-    private myScrollContainer2: ElementRef;
-
-    userMessage: string;
-    adminMessage: string;
-    messages: Array<Message> = [];
     private count: number;
 
-    send(isAdmin: boolean) {
-        if(!(isAdmin ? this.adminMessage : this.userMessage)) return;
+    static messages: Array<Message> = [];
+    message: string;
 
-        let text = (isAdmin ? this.adminMessage : this.userMessage);
+    constructor() {
+        ChatComponent.messages = JSON.parse(localStorage.getItem('messages'));
+        if(!ChatComponent.messages) {
+            ChatComponent.messages = [];
+        }
+    }
+
+    send() {
+        if(!this.message) return;
+
         let time = moment().locale("ru").calendar();
-        let avatar = "../../assets/images/" + (isAdmin ? "admin" : "user") + ".png";
-        let message = new Message(text, time, avatar, isAdmin);
-        this.messages.push(message);
+        let message = new Message(this.message, time, this.avatar, this.admin);
+        ChatComponent.messages.push(message);
+        localStorage.setItem('messages', JSON.stringify(ChatComponent.messages));
+        this.message = "";
+    }
 
-        this.userMessage = this.adminMessage = "";
+    get staticMessages() {
+        return ChatComponent.messages;
     }
 
     ngOnInit() { 
@@ -36,8 +53,8 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     }
 
     ngAfterViewChecked() {
-        if((this.messages ? this.messages.length : 0) != this.count) {
-            this.count = this.messages ? this.messages.length : 0;
+        if((ChatComponent.messages ? ChatComponent.messages.length : 0) != this.count) {
+            this.count = ChatComponent.messages ? ChatComponent.messages.length : 0;
             this.scrollToBottom();
         }
     }
@@ -45,7 +62,6 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     scrollToBottom(): void {
         try {
             this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
-            this.myScrollContainer2.nativeElement.scrollTop = this.myScrollContainer2.nativeElement.scrollHeight;
         } catch(err) {}
     }
 }
