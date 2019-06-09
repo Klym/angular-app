@@ -1,0 +1,101 @@
+@font-face {
+    font-family: KievitPro-Bold;
+    src: url("../assets/fonts/KievitPro-Bold.ttf");
+    src: url("../assets/fonts/KievitPro-Bold.eot"),
+         url("../assets/fonts/KievitPro-Bold.svg"),
+         url("../assets/fonts/KievitPro-Bold.woff"),
+         url("../assets/fonts/KievitPro-Bold.woff2");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: KievitPro-Light;
+    src: url("../assets/fonts/KievitPro-Light.ttf");
+    src: url("../assets/fonts/KievitPro-Light.eot"),
+         url("../assets/fonts/KievitPro-Light.svg"),
+         url("../assets/fonts/KievitPro-Light.woff"),
+         url("../assets/fonts/KievitPro-Light.woff2");
+}
+
+@font-face {
+    font-family: KievitPro-Medium;
+    src: url("../assets/fonts/KievitPro-Medium.ttf");
+    src: url("../assets/fonts/KievitPro-Medium.eot"),
+         url("../assets/fonts/KievitPro-Medium.svg"),
+         url("../assets/fonts/KievitPro-Medium.woff"),
+         url("../assets/fonts/KievitPro-Medium.woff2");
+}
+
+@font-face {
+    font-family: KievitPro-Regular;
+    src: url("../assets/fonts/KievitPro-Regular.ttf");
+    src: url("../assets/fonts/KievitPro-Regular.eot"),
+         url("../assets/fonts/KievitPro-Regular.svg"),
+         url("../assets/fonts/KievitPro-Regular.woff"),
+         url("../assets/fonts/KievitPro-Regular.woff2");
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url("../assets/fonts/Roboto-Regular.ttf");
+    src: url("../assets/fonts/Roboto-Regular.eot"),
+         url("../assets/fonts/Roboto-Regular.svg"),
+         url("../assets/fonts/Roboto-Regular.woff"),
+         url("../assets/fonts/Roboto-Regular.woff2");
+}
+
+.wrapper {
+    display: block;
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 880px;
+}
+
+.about {
+    height: 440px;
+}
+
+.about > div {
+    background: #fff;
+}
+
+.img {
+    display: block;
+    float: left;
+    height: 440px;
+    position: relative;
+    width: 440px;
+}
+
+.description {
+    height: calc(100% - 104px);
+    margin-left: 440px;
+    padding: 104px 30px 0 30px;
+}
+
+.title {
+    font-family: KievitPro-Bold;
+    font-size: 29px;
+    line-height: 35px;
+    letter-spacing: 0.03em;
+}
+
+.text {
+    font-family: KievitPro-Light;
+    font-size: 17px;
+    line-height: 25px;
+}
+
+.more {
+    display: block;
+    color: #212121;
+    font: 17px/25px KievitPro-Medium;
+    height: 26px;
+    text-decoration-color: #FF4641;
+}
+
+.chat-wrapper {
+    margin-top:50px;
+}

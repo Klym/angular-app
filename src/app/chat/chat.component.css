@@ -1,0 +1,133 @@
+.title {
+    font: 29px/29px KievitPro-Bold;
+}
+
+.chat {
+    display: block;
+    float: left;
+    position: relative;
+    width: 415px;
+    margin-bottom: 100px;
+}
+
+.chat.admin {
+    border-left: 2px solid #EBE9E4;
+    margin-left:24px;
+    padding-left:24px;
+}
+
+.chat-box {
+    background: white;
+}
+
+.header {
+    padding: 26px 15px 26px 26px;
+}
+
+.avatar {
+    border-radius: 50%;
+    float: left;
+    height: 44px;
+    margin-right: 12px;
+    width: 44px;
+}
+
+.name {
+    color: #000;
+    font: 18px/25px KievitPro-Bold;
+}
+
+.description {
+    color: #ff4641;
+    font: 13px/17px KievitPro-Regular;
+}
+
+.messages-list {
+    padding: 10px 10px 10px 13px;
+    max-height: 495px;
+    min-height: 495px;
+    border-top: 1px solid #ECECEC;
+    border-bottom: 1px solid #ECECEC;
+    overflow-x: hidden;
+}
+
+.messages-list::-webkit-scrollbar {
+    background: rgba(0, 0, 0, .0);
+    cursor: pointer;
+    width: 3px;
+}
+
+.messages-list::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, .0)
+}
+
+
+.messages-list::-webkit-scrollbar-thumb {
+    background: #FF4641;
+    cursor: pointer;
+}
+
+.messages-list::--webkit-scrollbar-thumb:hover {
+    background: #EA534F;
+}
+
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    padding: 12px;
+}
+
+.item.my {
+    background: #f9f7f2;
+}
+
+.message {
+    display: block;
+    width: calc(100% - 56px);
+}
+
+.message .text {
+    word-wrap: break-word;
+    font: 15px/24px KievitPro-Regular
+}
+
+.message .time {
+    color: #9d9d9d;
+    font: 11px/11px Roboto-Regular;
+}
+
+.form {
+    height: 50px;
+    padding: 25px 15px 25px 25px;
+}
+
+.form input {
+    border: 1px solid #ececec;
+    font: 15px/15px KievitPro-Regular;
+    height: 50px;
+    padding: 0 25px;
+    width: 218px;
+}
+
+.form button {
+    background: transparent;
+    border: none;
+    position: relative;
+    width: 35px;
+    top: -13px;
+    cursor: pointer;
+    outline: none;
+}
+
+.form button::before {
+    background: url("../../assets/images/send.png") top no-repeat;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 22px;
+    width: 22px;
+}
